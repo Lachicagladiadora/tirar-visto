@@ -6,13 +6,13 @@ type ButtonProps = ComponentPropsWithoutRef<"button"> & {
   children: ReactNode;
 };
 
-export const Button = ({ isDark, children, ...props }: ButtonProps) => {
+export const Button = ({ isDark = true, children, ...props }: ButtonProps) => {
   return (
     <button
       {...props}
       className={twMerge(
         ` py-[12.5px] px-5 rounded-full font-semibold ${
-          isDark ? "bg-button-light text-dark" : " bg-button-dark text-light"
+          isDark ? " bg-button-dark text-light" : "bg-button-light text-dark"
         }`,
         props.className
       )}

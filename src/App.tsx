@@ -10,6 +10,8 @@ import {
   faClock,
   faPhoneVolume,
 } from "@fortawesome/free-solid-svg-icons";
+import { H2 } from "./atomic/atoms/H2";
+import { H3 } from "./atomic/atoms/H3";
 
 function App() {
   const [currentPage, setCurrentPage] = useState<Page>("Home");
@@ -24,12 +26,12 @@ function App() {
     <div className="h-full min-h-[100dvh] w-full max-w-[1440px] flex flex-col items-center justify-center bg-white">
       {/* first section: about */}
       <section className="w-full h-full px-3.5 py-4 flex flex-col max-h-auto  gap-[60px] md:min-h-[940px] md:px-20 md:py-5 lg:flex-row">
-        <div className="w-full lg:w-1/2">
+        <div className="w-full flex-1">
           <Header currentPage={currentPage} updatePage={setCurrentPage} />
-          <h1 className="py-6 font-[500] text-[28px] text-dark border-b-2 border-b-border md:text-[54px] md:py-8">
+          <H2 className="border-b-2 border-b-border">
             Tire seu Visto conosco e não tenha nenhuma surpresa negativa!
-          </h1>
-          <div className="w-full flex flex-col py-[30px] gap-10 md:flex-row md:items-end md:py-[60px] md:gap-5">
+          </H2>
+          <div className="w-full  flex flex-col py-[30px] gap-10 md:flex-row md:items-end md:py-[60px] md:gap-5">
             <div className="flex-1">
               <p className="pb-10">
                 Com uma equipe altamente treinada, nós temos todos os
@@ -37,7 +39,9 @@ function App() {
                 rápido. Uma consultoria completa para você e sua família não ter
                 nenhuma preocupação na sua viagem.
               </p>
-              <Button>Saiba mais</Button>
+              <Button className="w-[140px] flex items-center justify-between px-5">
+                Saiba mais <FontAwesomeIcon icon={faArrowRight} />
+              </Button>
             </div>
             <div className="w-fit md:max-w-[191px] flex flex-col mx-auto md:mx-0">
               <img
@@ -56,21 +60,19 @@ function App() {
               </div>
             </div>
           </div>
-          <div className="flex items-center justify-center gap-7 lg:justify-start">
+          <div className="flex items-center justify-center gap-7 mt-5 lg:justify-start">
             {NUMBERS.map((c, i) => (
               <NumberData key={i} label={c.label} number={c.number} />
             ))}
           </div>
         </div>
-        <div className="relative min-h-[940px] md:h-full w-full md:flex-1 bg-[url(./roda-gigante.png)] bg-cover rounded-3xl overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-full bg-dark opacity-10 " />
-          <Button isDark className="absolute top-0 right-0 m-4">
+        <div className="relative min-h-[900px] md:h-full w-full md:max-w-[762px] lg:w-[792px] bg-[url(./roda-gigante.png)] bg-cover rounded-3xl overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-full bg-linear-to-t from-dark/60 to-dark/20 " />
+          <Button isDark={false} className="absolute top-0 right-0 m-4">
             Tirar meu visto agora!
           </Button>
           <div className="absolute w-full max-w-[522px] text-light bottom-0 left-0 ml-7 mb-6 pr-7 md:ml-10 md:mb-9 md:pr-12">
-            <h3 className="font-semibold text-[44px] leading-[130.8%] tracking-tighter">
-              Realize o seu sonho com a ajuda da Tirar Visto!
-            </h3>
+            <H3 isLight>Realize o seu sonho com a ajuda da Tirar Visto!</H3>
             <p className="mt-3">
               Com um serviço profissional, você não terá dor de cabeça para todo
               o processo do visto e entrevistas no consulado.
@@ -81,7 +83,7 @@ function App() {
 
       {/* second section: banner */}
       <aside className="relative w-full h-full min-h-[340px] bg-light-dark uppercase text-dark font-medium text-4xl lg:text-[56px]">
-        <p className="absolute top-0 left-0 mb-8 py-[40px] px-[30px] w-full max-w-[854px] leading-[130.8%] tracking-tighter md:py-[70px] md:px-[60px] md:mb-0">
+        <p className="absolute top-0 left-0 mb-8 py-[40px] px-[30px] w-full max-w-[854px]  md:py-[70px] md:px-[60px] md:mb-0">
           Consultoria completa para tirar seu visto
         </p>
         <div className="absolute top-[176px] right-16 size-12 text-2xl bg-light flex items-center justify-center shadow-md rounded-md text-light stroke-[24px] stroke-dark rotate-[10deg] md:top-[120px] md:right-72 lg:right-80">
@@ -91,7 +93,7 @@ function App() {
           <FontAwesomeIcon icon={faClock} />
         </div>
 
-        <p className="absolute bottom-0 right-0 py-[40px] px-[30px] italic leading-[130.8%] tracking-tighter md:py-[70px] px:right-[60px]">
+        <p className="absolute bottom-0 right-0 py-[40px] px-[30px] italic  md:py-[70px] px:right-[60px]">
           você esta em boas mãos!
         </p>
       </aside>
