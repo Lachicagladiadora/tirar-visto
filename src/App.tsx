@@ -78,7 +78,7 @@ function App() {
             ))}
           </div>
         </div>
-        <div className="relative min-h-[900px] md:h-full w-full md:max-w-[762px] lg:w-[792px] bg-[url(./roda-gigante.png)] bg-cover rounded-3xl overflow-hidden">
+        <div className="relative min-h-[900px] md:h-full w-full md:max-w-[762px] lg:w-[792px] bg-[url(./assets/roda-gigante.png)] bg-cover rounded-3xl overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-full bg-linear-to-t from-dark/60 to-dark/20 " />
           <Button isDark={false} className="absolute top-0 right-0 m-4">
             Tirar meu visto agora!
