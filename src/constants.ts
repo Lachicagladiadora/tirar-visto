@@ -1,4 +1,4 @@
-import type { NumberData, Process } from "./types";
+import type { Image, NumberData, Process } from "./types";
 
 export const NUMBERS: NumberData[] = [
   {
@@ -33,5 +33,34 @@ export const PROCESS: Process[] = [
     summary: "Leia mais",
     details:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+  },
+];
+
+export const FIRST_DESTINATION: Image[] = [
+  {
+    label: "Bali, Indonesia",
+    src: "./indonesia.png",
+  },
+  {
+    label: "Nova York, Estados Unidos",
+    src: "./us.png",
+  },
+  {
+    label: "Santorini, Grecia",
+    src: "./grecia.png",
+  },
+];
+export const SECOND_DESTINATION: Image[] = [
+  {
+    label: "Paris, França",
+    src: "./france.png",
+  },
+  {
+    label: "Cidade do Cabo, Africa do Sul",
+    src: "./africa.png",
+  },
+  {
+    label: "Mumbai, India",
+    src: "india.png",
   },
 ];

@@ -1,7 +1,12 @@
 import { useEffect, useState } from "react";
 import { Header } from "./atomic/molecules/Header";
 import type { Page } from "./types";
-import { NUMBERS, PROCESS } from "./constants";
+import {
+  FIRST_DESTINATION,
+  NUMBERS,
+  PROCESS,
+  SECOND_DESTINATION,
+} from "./constants";
 import { NumberData } from "./atomic/molecules/NumberData";
 import { Button } from "./atomic/atoms/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -14,6 +19,7 @@ import {
 import { H2 } from "./atomic/atoms/H2";
 import { H3 } from "./atomic/atoms/H3";
 import { Details } from "./atomic/molecules/Details";
+import { ImageViewer } from "./atomic/organisms/ImageViewer";
 
 function App() {
   const [currentPage, setCurrentPage] = useState<Page>("Home");
@@ -100,7 +106,7 @@ function App() {
         </p>
       </aside>
 
-      {/* third section: functionality */}
+      {/* third section: how it works */}
       <section className="w-full py-10 px-[30px] md:py-[95px] md:px-[60px]">
         <div className="w-full mb-[60px]">
           <Button isDark={false}>Veja como funciona</Button>
@@ -137,16 +143,51 @@ function App() {
                 details={c.details}
               />
             ))}
-            {/* <Details
-              titleDetail={"Etapa Inicial"}
-              summaryText={
-                <>
-                  <FontAwesomeIcon icon={faPlus} /> Leia mais
-                </>
-              }
-              details="Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry."
-            /> */}
+          </div>
+        </div>
+      </section>
+      {/* fourth section: destination section */}
+      <section className="w-full h-full max-h-[1081px] py-[84px] flex items-center justify-center overflow-hidden ">
+        <div className="w-full max-w-[880px] h-full max-h-[910px]">
+          <div className="relative flex flex-col items-center justify-center ">
+            <img
+              src="./square-tl.png"
+              alt=""
+              className="absolute -top-[16%] -left-[30%] h-[46px] sm:-top-[40%] sm:-left-[32%] sm:h-[86px]"
+            />
+            <img
+              src="./square-tr.png"
+              alt=""
+              className="absolute -top-[16%] -right-[30%] h-[46px] sm:-top-[40%] sm:-right-[32%] sm:h-[86px]"
+            />
+            <img
+              src="./square-bl.png"
+              alt=""
+              className="absolute -bottom-[4%] -left-[10%] h-[60px] sm:-bottom-[40%] sm:-left-[32%] sm:h-[158px]"
+            />
+            <img
+              src="./square-br.png"
+              alt=""
+              className="absolute -bottom-[4%] -right-[10%] h-[60px] sm:-bottom-[40%] sm:-right-[32%] sm:h-[158px]"
+            />
+            <Button isDark={false} className="">
+              Top Destinos
+            </Button>
+            {/* <div> */}
+            <H2 className="text-center">Destinos mais procurados </H2>
+            <p className="text-center w-full max-w-[584px] pt-3 pb-10">
+              Confira os destinos mais procurados por nossos clientes nos
+              últimos meses, qual seria o seu novo destino?
+            </p>
+            {/* </div> */}
+            <Button>Conheça mais</Button>
+          </div>
+          <div className="w-full flex flex-col gap-5 pt-[60px]">
+            <ImageViewer imageList={FIRST_DESTINATION} className="items-end" />
+            <ImageViewer
+              imageList={SECOND_DESTINATION}
+              className="items-start"
+            />
           </div>
         </div>
       </section>

@@ -12,3 +12,8 @@ export type Process = {
   summary: ReactNode;
   details: string;
 };
+
+export type Image = {
+  label: string;
+  src: string;
+};
