@@ -5,8 +5,11 @@ import { NUMBERS } from "./constants";
 import { NumberData } from "./atomic/atoms/NumberData";
 import { Button } from "./atomic/atoms/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowCircleLeft } from "@fortawesome/free-solid-svg-icons/faArrowCircleLeft";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import {
+  faArrowRight,
+  faClock,
+  faPhoneVolume,
+} from "@fortawesome/free-solid-svg-icons";
 
 function App() {
   const [currentPage, setCurrentPage] = useState<Page>("Home");
@@ -18,9 +21,9 @@ function App() {
   }, []);
 
   return (
-    <div className="h-full min-h-[100dvh] w-full max-w-[1440px] flex items-center justify-center bg-white">
+    <div className="h-full min-h-[100dvh] w-full max-w-[1440px] flex flex-col items-center justify-center bg-white">
       {/* first section: about */}
-      <section className="w-full h-full p-3.5 flex flex-col max-h-auto md:min-h-[940px] md:p-20 lg:flex-row gap-[60px]">
+      <section className="w-full h-full px-3.5 py-4 flex flex-col max-h-auto  gap-[60px] md:min-h-[940px] md:px-20 md:py-5 lg:flex-row">
         <div className="w-full lg:w-1/2">
           <Header currentPage={currentPage} updatePage={setCurrentPage} />
           <h1 className="py-6 font-[500] text-[28px] text-dark border-b-2 border-b-border md:text-[54px] md:py-8">
@@ -75,6 +78,23 @@ function App() {
           </div>
         </div>
       </section>
+
+      {/* second section: banner */}
+      <aside className="relative w-full h-full min-h-[340px] bg-light-dark uppercase text-dark font-medium text-4xl lg:text-[56px]">
+        <p className="absolute top-0 left-0 mb-8 py-[40px] px-[30px] w-full max-w-[854px] leading-[130.8%] tracking-tighter md:py-[70px] md:px-[60px] md:mb-0">
+          Consultoria completa para tirar seu visto
+        </p>
+        <div className="absolute top-[176px] right-16 size-12 text-2xl bg-light flex items-center justify-center shadow-md rounded-md text-light stroke-[24px] stroke-dark rotate-[10deg] md:top-[120px] md:right-72 lg:right-80">
+          <FontAwesomeIcon icon={faPhoneVolume} />
+        </div>
+        <div className="absolute bottom-[120px] left-16 size-12 text-2xl bg-light flex items-center justify-center shadow-md rounded-md text-light stroke-[24px] stroke-dark rotate-[10deg] md:bottom-[80px] md:left-40 lg:bottom-[60px] lg:left-60">
+          <FontAwesomeIcon icon={faClock} />
+        </div>
+
+        <p className="absolute bottom-0 right-0 py-[40px] px-[30px] italic leading-[130.8%] tracking-tighter md:py-[70px] px:right-[60px]">
+          você esta em boas mãos!
+        </p>
+      </aside>
     </div>
   );
 }
