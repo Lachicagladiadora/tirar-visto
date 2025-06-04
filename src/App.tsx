@@ -4,6 +4,7 @@ import type { Page } from "./types";
 import {
   FIRST_DESTINATION,
   NUMBERS,
+  PACKAGES,
   PROCESS,
   SECOND_DESTINATION,
 } from "./constants";
@@ -11,6 +12,7 @@ import { NumberData } from "./atomic/molecules/NumberData";
 import { Button } from "./atomic/atoms/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
+  faArrowLeft,
   faArrowRight,
   faClock,
   faPhoneVolume,
@@ -20,6 +22,7 @@ import { H2 } from "./atomic/atoms/H2";
 import { H3 } from "./atomic/atoms/H3";
 import { Details } from "./atomic/molecules/Details";
 import { ImageViewer } from "./atomic/organisms/ImageViewer";
+import { Package } from "./atomic/organisms/Package";
 
 function App() {
   const [currentPage, setCurrentPage] = useState<Page>("Home");
@@ -88,7 +91,6 @@ function App() {
           </div>
         </div>
       </section>
-
       {/* second section: banner */}
       <aside className="relative w-full h-full min-h-[340px] bg-light-dark uppercase text-dark font-medium text-4xl lg:text-[56px]">
         <p className="absolute top-0 left-0 mb-8 py-[40px] px-[30px] w-full max-w-[854px]  md:py-[70px] md:px-[60px] md:mb-0">
@@ -105,7 +107,6 @@ function App() {
           você esta em boas mãos!
         </p>
       </aside>
-
       {/* third section: how it works */}
       <section className="w-full py-10 px-[30px] md:py-[95px] md:px-[60px]">
         <div className="w-full mb-[60px]">
@@ -189,6 +190,28 @@ function App() {
               className="items-start"
             />
           </div>
+        </div>
+      </section>
+      {/* fifth  section */}\
+      <section className="w-full py-[84px] flex flex-col items-center justify-center">
+        <div className="w-full">
+          <Button isDark={false}>Pacotes</Button>
+          <div className="w-full flex justify-between items-center">
+            <H2>Confira nossos pacotes</H2>
+            <div className="flex gap-5">
+              <Button className="py-2 px-3 text-2xl border border-dark bg-light text-dark">
+                <FontAwesomeIcon icon={faArrowLeft} />
+              </Button>
+              <Button className="py-2 px-3 text-2xl">
+                <FontAwesomeIcon icon={faArrowRight} />
+              </Button>
+            </div>
+          </div>
+        </div>
+        <div className="flex gap-6 flex-wrap justify-center items-center lg:flex-nowrap">
+          {PACKAGES.map((c, i) => (
+            <Package key={i} packageAvailable={c} />
+          ))}
         </div>
       </section>
     </div>

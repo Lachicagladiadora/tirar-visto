@@ -1,4 +1,4 @@
-import type { Image, NumberData, Process } from "./types";
+import type { Image, NumberData, PackageData, Process } from "./types";
 
 export const NUMBERS: NumberData[] = [
   {
@@ -62,5 +62,35 @@ export const SECOND_DESTINATION: Image[] = [
   {
     label: "Mumbai, India",
     src: "india.png",
+  },
+];
+
+export const PACKAGES: PackageData[] = [
+  {
+    label: "Passaporte",
+    src: "./passport.png",
+    isPremium: false,
+    attention: "On-line",
+    time: "45 dias",
+    price: "R$ 890,00",
+    available: true,
+  },
+  {
+    label: "Passaporte + Visto",
+    src: "./check-in.png",
+    isPremium: false,
+    attention: "On-line + Presencial",
+    time: "25 dias",
+    price: "R$ 1.290,00",
+    available: true,
+  },
+  {
+    label: "Consultoria Completa",
+    src: "./consultancy.png",
+    isPremium: false,
+    attention: "Presencial Completo",
+    time: "10 dias",
+    price: "R$ 1.890,00",
+    available: true,
   },
 ];

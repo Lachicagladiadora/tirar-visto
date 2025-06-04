@@ -17,3 +17,13 @@ export type Image = {
   label: string;
   src: string;
 };
+
+export type PackageData = {
+  label: string;
+  src: string;
+  isPremium: boolean;
+  attention: string;
+  time: string;
+  price: string;
+  available: boolean;
+};
