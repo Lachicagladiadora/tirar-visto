@@ -1,6 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 @import "tailwindcss";
-* {
-  margin: 0px;
-  padding: 0px;
-  box-sizing: border-box;
+
+@theme {
+  --font-inter: "Inter";
+  --color-border: #e5e5e5;
+  --color-text: #8d8d8d;
+  --color-dark: #232323;
+  --color-button-dark: #1b2543;
+  --color-button-light: #f6c010;
+  --color-light: #ffffff;
+  --color-light-dark: #f7f7f7;
 }
+
+/* margin: 0px; */
+/* padding: 0px; */
+/* box-sizing: border-box; */
