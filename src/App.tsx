@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Header } from "./atomic/molecules/Header";
+import { Header } from "./atomic/organisms/Header";
 import type { Page } from "./types";
 import {
   FIRST_DESTINATION,
@@ -23,6 +23,7 @@ import { H3 } from "./atomic/atoms/H3";
 import { Details } from "./atomic/molecules/Details";
 import { ImageViewer } from "./atomic/organisms/ImageViewer";
 import { Package } from "./atomic/organisms/Package";
+import { Footer } from "./atomic/organisms/Footer";
 
 function App() {
   const [currentPage, setCurrentPage] = useState<Page>("Home");
@@ -34,7 +35,7 @@ function App() {
   }, []);
 
   return (
-    <div className="h-full min-h-[100dvh] w-full max-w-[1440px] flex flex-col items-center justify-center bg-white">
+    <div className="h-full min-h-[100dvh] w-full max-w-[1440px] flex flex-col items-center justify-center bg-light">
       {/* first section: about */}
       <section className="w-full h-full px-3.5 py-4 flex flex-col max-h-auto  gap-[60px] md:min-h-[940px] md:px-20 md:py-5 lg:flex-row">
         <div className="w-full flex-1">
@@ -174,13 +175,11 @@ function App() {
             <Button isDark={false} className="">
               Top Destinos
             </Button>
-            {/* <div> */}
             <H2 className="text-center">Destinos mais procurados </H2>
             <p className="text-center w-full max-w-[584px] pt-3 pb-10">
               Confira os destinos mais procurados por nossos clientes nos
               últimos meses, qual seria o seu novo destino?
             </p>
-            {/* </div> */}
             <Button>Conheça mais</Button>
           </div>
           <div className="w-full flex flex-col gap-5 pt-[60px]">
@@ -193,7 +192,7 @@ function App() {
         </div>
       </section>
       {/* fifth  section */}\
-      <section className="w-full py-[84px] flex flex-col items-center justify-center">
+      <section className="w-full py-[84px] flex flex-col items-center justify-center px-[14px] md:px-[60px]">
         <div className="w-full">
           <Button isDark={false}>Pacotes</Button>
           <div className="w-full flex justify-between items-center">
@@ -214,6 +213,7 @@ function App() {
           ))}
         </div>
       </section>
+      <Footer />
     </div>
   );
 }
