@@ -7,7 +7,7 @@ type HeaderProps = {
 };
 export const Header = ({ currentPage, updatePage }: HeaderProps) => {
   return (
-    <header className="w-full h-full min-h-[42px] max-h-[161px] md:min-h-[43px] md:max-h-[1300px] flex flex-col gap-1.5 text-dark md:items-center lg:justify-between md:flex-row md:py-[29px]">
+    <header className="w-full h-full min-h-[42px] max-h-[161px] md:min-h-[43px] md:max-h-[130px] flex flex-col gap-1.5 text-dark md:items-center lg:justify-between md:flex-row md:py-[29px]">
       <a
         href="#"
         onClick={() => {

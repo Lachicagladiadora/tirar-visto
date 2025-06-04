@@ -1,17 +1,19 @@
 import { useEffect, useState } from "react";
 import { Header } from "./atomic/molecules/Header";
 import type { Page } from "./types";
-import { NUMBERS } from "./constants";
-import { NumberData } from "./atomic/atoms/NumberData";
+import { NUMBERS, PROCESS } from "./constants";
+import { NumberData } from "./atomic/molecules/NumberData";
 import { Button } from "./atomic/atoms/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faArrowRight,
   faClock,
   faPhoneVolume,
+  faPlus,
 } from "@fortawesome/free-solid-svg-icons";
 import { H2 } from "./atomic/atoms/H2";
 import { H3 } from "./atomic/atoms/H3";
+import { Details } from "./atomic/molecules/Details";
 
 function App() {
   const [currentPage, setCurrentPage] = useState<Page>("Home");
@@ -97,6 +99,57 @@ function App() {
           você esta em boas mãos!
         </p>
       </aside>
+
+      {/* third section: functionality */}
+      <section className="w-full py-10 px-[30px] md:py-[95px] md:px-[60px]">
+        <div className="w-full mb-[60px]">
+          <Button isDark={false}>Veja como funciona</Button>
+          <div className="flex flex-col items-center justify-between lg:flex-row">
+            <H2 className="w-full lg:max-w-[420px]">
+              Sua tranquilidade não tem preço!
+            </H2>
+            <p className="flex-1 w-full max-w-[826px]">
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+              type and scrambled it to make a type specimen book. It has
+              survived not only five centuries, but also the leap into
+              electronic typesetting, remaining essentially unchanged.
+            </p>
+          </div>
+        </div>
+        <div className="w-full flex flex-col gap-9 md:flex-row md:items-center">
+          <img
+            src="./process.png"
+            alt=""
+            className="h-full w-full max-h-[444px] min-w-[50%] max-w-[756px]"
+          />
+          <div>
+            {PROCESS.map((c, i) => (
+              <Details
+                key={i}
+                titleDetail={c.title}
+                summaryText={
+                  <>
+                    <FontAwesomeIcon icon={faPlus} /> {c.summary}
+                  </>
+                }
+                details={c.details}
+              />
+            ))}
+            {/* <Details
+              titleDetail={"Etapa Inicial"}
+              summaryText={
+                <>
+                  <FontAwesomeIcon icon={faPlus} /> Leia mais
+                </>
+              }
+              details="Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry."
+            /> */}
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

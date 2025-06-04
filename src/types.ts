@@ -1,6 +1,14 @@
+import type { ReactNode } from "react";
+
 export type Page = "Home" | "Quem somos" | "Serviços" | "Contato";
 
-export type Number = {
+export type NumberData = {
   number: string;
   label: string;
+};
+
+export type Process = {
+  title: ReactNode;
+  summary: ReactNode;
+  details: string;
 };
